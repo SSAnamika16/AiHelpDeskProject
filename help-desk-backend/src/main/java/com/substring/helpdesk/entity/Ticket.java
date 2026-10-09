@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.substring.helpdesk.entity.Priority;
 
 import java.time.LocalDateTime;
 
@@ -27,6 +28,9 @@ public class Ticket {
 
     @Enumerated(EnumType.STRING)
     private Priority priority;
+
+    @Column(length=1000)
+    private String description;
 
     @Column(unique = true)
     private String username;
