@@ -1,0 +1,125 @@
+##spring.application.name=help-desk-backend
+
+
+
+spring:
+  application:
+    name: help-desk-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_ai_helpdesk?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  ai:
+    model:
+      chat: ollama
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen2.5:7b
+
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+
+
+
+
+
+
+
+
+#
+#
+#spring:
+#  application:
+#    name: "help-desk-backend"
+##    datasource configuration
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/spring_ai_helpdesk?useSSL=false&serverTimeZone=UTC
+#    username: root
+#    password: root1234
+#
+##    hibernate configuration
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+##      hibernate:
+##        dialect: org.hibernate.dialect.MySQLDialect
+#
+#
+##        spring.ai.model.chat=ollama
+##        spring.ai.ollama.base-url=http://localhost:11434
+#        #spring.ai.ollama.chat.model=codellama:latest
+#
+##  ai:
+##    openai:
+##      api-key: ${OPENAI_API_KEY}
+##      chat:
+##        options:
+##          model: gpt-4o-mini
+#
+#    ai:
+#      model:
+#        chat: ollama
+#      ollama:
+#        base-url: http://localhost:11434
+#        chat:
+#          model: codellama:latest
+#
+#server:
+#  port: 8081
+#
+##  logging.level.org.springframework.ai.chat.client.advisor: DEBUG
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        ai:
+#          chat:
+#            client:
+#              advisor: DEBUG
+#
+#
+#
+#
+
+
+#  Thank you for the additional information, Om.
+#
+#  It sounds like the issue might be related to the change in your laptop screen. Could you please provide more details about the change in your screen and the blinking issue?
+#
+#  1. Did you recently replace the screen or did it fail?
+#  2. Are you seeing the blinking on the screen itself or on any other indicators on your laptop?
+#  3. Are you experiencing any other issues with your laptop, such as system crashes or unusual behavior?
+#
+#  I'll create a ticket to help track and resolve this issue for you.
+#
+#Ticket ID: #IT-2025-1848
+#Issue: Screen blinking issue after screen replacement
+#Priority: Medium
+#Status: Open
+#Summary: Blinking issue on laptop screen after recent screen change
+#Description: The issue started after the laptop screen was replaced. The screen and other indicators are experiencing occasional blinking.
+#
+#  Thank you for providing these details. Our support team will look into this and get back to you shortly.
+#
+#  Is there anything else I can assist you with right now?
