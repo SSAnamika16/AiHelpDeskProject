@@ -6,7 +6,10 @@ import com.substring.helpdesk.repository.TicketRepository;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.ai.tool.annotation.Tool;
+import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Getter
@@ -16,12 +19,15 @@ public class TicketService {
 
     private final TicketRepository ticketRepository;
 
-    //create ticket
+//    create ticket
+    @Transactional
     public Ticket createTicket(Ticket ticket) {
+        ticket.setId(null);
         return ticketRepository.save(ticket);
     }
 
     //update ticket
+    @Transactional
     public Ticket updateTicket(Ticket ticket) {
         return ticketRepository.save(ticket);
     }
@@ -33,8 +39,8 @@ public class TicketService {
     }
 
     //get ticket by username
-    public Ticket getTicketByUserName(String username) {
-        return ticketRepository.findByUsername(username).orElse(null);
+    public Ticket getTicketByEmailId(String username) {
+        return ticketRepository.findByEmail(username).orElse(null);
     }
 
 

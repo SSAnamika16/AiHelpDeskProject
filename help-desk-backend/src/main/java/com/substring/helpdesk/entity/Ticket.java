@@ -3,21 +3,21 @@ package com.substring.helpdesk.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import com.substring.helpdesk.entity.Priority;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "help_desk_tickets")
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ticket {
+@ToString
+public class Ticket implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,7 @@ public class Ticket {
     private String description;
 
     @Column(unique = true)
-    private String username;
+    private String email;
 
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;

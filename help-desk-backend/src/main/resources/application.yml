@@ -24,6 +24,12 @@ spring:
       chat:
         model: qwen2.5:7b
 
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+
 server:
   port: 8081
 
@@ -96,7 +102,7 @@ logging:
 #
 #
 
-  
+
 #  Thank you for the additional information, Om.
 #
 #  It sounds like the issue might be related to the change in your laptop screen. Could you please provide more details about the change in your screen and the blinking issue?
